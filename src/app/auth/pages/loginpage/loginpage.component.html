@@ -1,14 +1,24 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+
 <div class="flex flex-column">
     <span class="text-lg mb-4">Inicio de Sesión</span>
 
     <mat-form-field>
-        <mat-label>Usuarios</mat-label>
-        <input type="text" maxlength="20" matInput placeholder="Nombre de usuario">
+        <mat-label>Correo</mat-label>
+        <input formControlName="email" type="email" maxlength="20" matInput placeholder="Ingresa tu correo electrónico">
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+            <small *ngIf="loginForm.get('email')?.errors?.['required']">El email es obligatorio.</small>
+            <small *ngIf="loginForm.get('email')?.errors?.['email']">El email no es válido.</small>
+          </div>
     </mat-form-field>
 
     <mat-form-field>
         <mat-label>Contraseña</mat-label>
-        <input type="password" maxlength="16" matInput placeholder="Contraseña">
+        <input formControlName="password" type="password" maxlength="16" matInput placeholder="Ingresa tu contraseña">
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            <small *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es obligatoria.</small>
+            <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Debe tener al menos 16 caracteres.</small>
+          </div>
     </mat-form-field>
 
     <button mat-button mat-flat-button>
@@ -20,3 +30,4 @@
         <a routerLink="/auth/register">¿No tienes cuenta? Registrate</a>
     </div>
 </div>
+</form>
