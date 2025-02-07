@@ -1,0 +1,30 @@
+/* Contenedor principal */
+.layout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  /* Caja del formulario */
+  .auth-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /* Asegurar que los inputs ocupen todo el ancho */
+  .full-width {
+    width: 100%;
+  }
+  
+  /* Espaciado para los campos */
+  .mat-form-field {
+    margin-bottom: 15px;
+  }
+  

@@ -1,49 +1,68 @@
-<div class="flex flex-column">
-    <span class="text-lg mb-4">Registro</span>
-
-    <mat-form-field>
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="form-container">
+      <span class="text-lg mb-4">Registro</span>
+  
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Nombre(s)</mat-label>
-        <input type="text" maxlength="20" matInput placeholder="Ingresa tu nombre(s)">
-    </mat-form-field>
-
-    <mat-form-field>
+        <input type="text" formControlName="nombre" maxlength="20" matInput placeholder="Ingresa tu nombre(s)">
+        <mat-error *ngIf="registerForm.get('nombre')?.hasError('required')">El nombre es obligatorio.</mat-error>
+        <mat-error *ngIf="registerForm.get('nombre')?.hasError('pattern')">Solo letras y espacios.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Apellido Paterno</mat-label>
-        <input type="text" maxlength="25" matInput placeholder="Ingresa tu apellido paterno">
-    </mat-form-field>
-
-    <mat-form-field>
+        <input type="text" formControlName="apellidoPaterno" maxlength="25" matInput placeholder="Ingresa tu apellido paterno">
+        <mat-error *ngIf="registerForm.get('apellidoPaterno')?.hasError('required')">El apellido es obligatorio.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Apellido Materno</mat-label>
-        <input type="text" maxlength="25" matInput placeholder="Ingresa tu apellido materno">
-    </mat-form-field>
-    
-    <mat-form-field>
+        <input type="text" formControlName="apellidoMaterno" maxlength="25" matInput placeholder="Ingresa tu apellido materno">
+        <mat-error *ngIf="registerForm.get('apellidoMaterno')?.hasError('required')">El apellido es obligatorio.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Nombre de usuario</mat-label>
-        <input type="text" maxlength="20" matInput placeholder="Ingresa un nombre de usuario">
-    </mat-form-field>
-
-    <mat-form-field>
+        <input type="text" formControlName="username" maxlength="20" matInput placeholder="Ingresa un nombre de usuario">
+        <mat-error *ngIf="registerForm.get('username')?.hasError('required')">El nombre de usuario es obligatorio.</mat-error>
+        <mat-error *ngIf="registerForm.get('username')?.hasError('minlength')">Mínimo 5 caracteres.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Correo</mat-label>
-        <input type="email" maxlength="40" matInput placeholder="Ingresa un correo electrónico">
-    </mat-form-field>
-
-    <mat-form-field>
-        <mat-label>Numero telefónico</mat-label>
-        <input type="tel" maxlength="10" matInput placeholder="Ingresa un numero de telefono">
-    </mat-form-field>
-
-    <mat-form-field>
+        <input type="email" formControlName="email" maxlength="40" matInput placeholder="Ingresa un correo electrónico">
+        <mat-error *ngIf="registerForm.get('email')?.hasError('required')">El correo es obligatorio.</mat-error>
+        <mat-error *ngIf="registerForm.get('email')?.hasError('email')">Correo inválido.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Número telefónico</mat-label>
+        <input type="tel" formControlName="telefono" maxlength="10" matInput placeholder="Ingresa un número de teléfono">
+        <mat-error *ngIf="registerForm.get('telefono')?.hasError('required')">El teléfono es obligatorio.</mat-error>
+        <mat-error *ngIf="registerForm.get('telefono')?.hasError('pattern')">Debe tener 10 dígitos.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Contraseña</mat-label>
-        <input type="password" maxlength="16" matInput placeholder="Crea una contraseña">
-    </mat-form-field>
-
-    <mat-form-field>
+        <input type="password" formControlName="password" maxlength="16" matInput placeholder="Crea una contraseña">
+        <mat-error *ngIf="registerForm.get('password')?.hasError('required')">La contraseña es obligatoria.</mat-error>
+        <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">Mínimo 16 caracteres.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Confirmar contraseña</mat-label>
-        <input type="password" maxlength="16" matInput placeholder="Confirma tu contraseña">
-    </mat-form-field>
-
-    <button mat-button mat-flat-button routerLink="/auth/login">
-        <mat-icon>home</mat-icon>
-        Registrarse
-    </button>
-
-</div>
+        <input type="password" formControlName="confirmPassword" maxlength="16" matInput placeholder="Confirma tu contraseña">
+        <mat-error *ngIf="registerForm.get('confirmPassword')?.hasError('required')">Confirmación requerida.</mat-error>
+        <mat-error *ngIf="registerForm.hasError('mismatch')">Las contraseñas no coinciden.</mat-error>
+      </mat-form-field>
+  
+      <button mat-button mat-flat-button color="primary" type="submit" [disabled]="registerForm.invalid">
+        <mat-icon>how_to_reg</mat-icon> Registrarse
+      </button>
+  
+      <div class="flex justify-content-end mt-5">
+        <a routerLink="/auth/login">¿Ya tienes cuenta? Inicia sesión</a>
+      </div>
+    </div>
+  </form>
+  
