@@ -1,27 +1,264 @@
-#container {
+/* Estilos generales para el menú */
+ion-menu {
+  --width: 250px; /* Ancho del menú */
+}
+
+ion-menu-button {
+  color: #fff; /* Color del ícono de menú */
+}
+
+ion-toolbar {
+  --background: rgb(253, 161, 210); /* Color de fondo de la barra */
+}
+
+ion-title {
+  color: white; /* Color del título */
+}
+
+/* Menú y título */
+ion-list {
+  padding: 0;
+}
+
+
+.nose{
+  font-size: 18px;
+  color: #333;
+  display: flex;
+  align-items: center; /* Alineación de los íconos y etiquetas */
+  padding-left: 20px; /* Distancia al lado izquierdo */
+}
+
+ion-item ion-icon {
+  margin-right: 15px; /* Distancia entre el ícono y el texto */
+  font-size: 24px; /* Tamaño del ícono */
+}
+
+ion-item ion-label {
+  font-weight: bold;
+  font-size: 18px; /* Tamaño de la fuente */
+}
+
+ion-item:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Efecto hover */
+}
+
+.cabecera{
+  padding-bottom: 10px;
+}
+
+
+
+.carrusel{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  padding-bottom: 10px;
+}
+
+.elemento{
+  flex: 1 0 auto;
+  margin:0;
+  width: 200px;
+  height: 200px;
+}
+
+
+.titulo {
+  
+  font-size: 1.3rem;
+  color: #000000;
+  padding-left: 5px;
+  margin: 0;
+  margin-top: 10px; /* Añadir margen superior */
+}
+
+ion-grid{
+  margin: 2vh 10px 0 5px;
+  ion-row{
+    ion-col{
+      padding: 5px !important;
+      ion-card{
+        border: 0.001vh solid var(--ion-color-medium);
+        //border-radius: 0;
+        height: 100px;
+        width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        ion-label{
+          font-size: 0.7rem;
+          font-weight: 600;
+          margin-top: 5px;
+          ion-thumbnail{
+            height: 7vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//----------------------------
+.banner {
+  background-image: linear-gradient(100deg, rgb(253, 161, 210), #ff00b320);
+  height: 12rem; /* Ajustado para más espacio */
   text-align: center;
+}
+//-----------------------------------
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+/* Estilo del logo */
+.logo-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-left: 10px; /* Espacio inicial de la izquierda */
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.logo-img {
+  width: 100px;  /* Ajusta el tamaño del logo */
+  height: 100px;
+  margin-right: 10px; /* Espacio entre el logo y el texto */
 }
 
-#container p {
+ion-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;  /* Color del texto */
+  margin-left: 30px; /* Alineación del título respecto al logo */
+}
+
+/* Estilos para los productos */
+.producto-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+  margin-bottom: 15px; /* Espacio entre productos */
+}
+
+.producto-contenedor {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.producto-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.producto-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-info h2 {
   font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
+  font-weight: bold;
   margin: 0;
 }
 
-#container a {
-  text-decoration: none;
+.producto-info p {
+  font-size: 14px;
+  margin: 5px 0 0;
+  color: #666; /* Gris suave */
+}
+
+/* Estilo general del contenedor */
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Estilos para los botones */
+ion-button {
+  margin-left: 20px; /* Separación entre botones */
+  height: 40px;
+  font-size: 14px;
+}
+
+/* Efecto hover para los botones */
+ion-button:hover {
+  background-color: #ff69b4; /* Color rosa claro */
+  color: #fff;
+}
+
+/* Estilos para los productos */
+.producto-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+  margin-bottom: 15px; /* Espacio entre productos */
+}
+
+.producto-contenedor {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.producto-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.producto-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-info h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.producto-info p {
+  font-size: 14px;
+  margin: 5px 0 0;
+  color: #666; /* Gris suave */
+}
+
+/* Estilo general del contenedor */
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  header.bg-pink .titulo {
+    font-size: 24px;
+  }
+
+  .navbar {
+    height: auto; /* Ajuste dinámico para pantallas pequeñas */
+  }
 }

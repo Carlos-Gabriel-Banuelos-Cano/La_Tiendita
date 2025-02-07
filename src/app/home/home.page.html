@@ -1,20 +1,158 @@
-<ion-header [translucent]="true">
+<ion-header class="cabecera">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="inicio"></ion-menu-button> <!-- Botón de menú vinculado correctamente -->
+    </ion-buttons>
+    <div class="logo-contenedor">
+      <img src="assets/img/Logo tienda.png" alt="Logo Tiendita" class="logo-img">
+      <ion-title>La Tiendita</ion-title>
+    </div>
+   <ion-buttons (click)="irACarrito()" slot="end">
+    <ion-button>
+      <ion-icon  slot="icon-only" name="cart" color="dark"></ion-icon>
+    </ion-button>
+   </ion-buttons> 
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<!-- Menú lateral -->
+<ion-menu side="start" menu-id="inicio" content-id="main-content">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title>Menú</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item class="nose" button routerLink="/abarrotes">
+        <ion-icon name="fast-food-outline"></ion-icon>
+        <ion-label>Productos</ion-label>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      </ion-item>
+      <ion-item class="nose" button routerLink="/carrito">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-label>Carrito</ion-label>
+      </ion-item>
+      <ion-item class="nose" button routerLink="/nosotros">
+        <ion-icon name="people-outline"></ion-icon>
+        <ion-label>Nosotros</ion-label>
+      </ion-item>
+      <ion-item class="nose" button routerLink="/perfil">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </ion-item>
+
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <ion-item routerLink="/login" color="danger">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <ion-label>Cerrar sesión</ion-label>
+    </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Contenido principal -->
+<ion-content id="main-content">
+
+  <ion-label class="titulo">Promociones!!</ion-label>
+
+  <div class="carrusel">
+    <div class="elemento">
+      <ion-card>
+        <img alt="Silhouette of mountains" src="assets/img/promo-viky.png" />
+        <ion-card-header>
+          <ion-card-subtitle> 3x2 Victoria Vicotria Mega 1.2L</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </div>
+
+    <div class="elemento">
+      <ion-card>
+        <img alt="Silhouette of mountains" src="assets/img/promo-dulces.png" />
+        <ion-card-header>
+          <ion-card-subtitle>Todos articulos de Dulceria!</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    <div class="elemento">
+      <ion-card>
+        <img alt="Silhouette of mountains" src="assets/img/promo-limpieza.png" />
+        <ion-card-header>
+          <ion-card-subtitle>Nuevos Articulos de limpieza</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    
   </div>
+  <br>
+  
+
+
+
+  <section class="banner">
+
+    <h2>Categorías</h2>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <ion-card (click)="irAAbarrotes()">
+          <ion-thumbnail>
+            <img src="assets/img/comida.png">
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap ion-text-center">Abarrotes</ion-label>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="3">
+        <ion-card (click)="irALimpieza()">
+          <ion-thumbnail>
+            <img src="assets/img/limpio.png">
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap ion-text-center">Limpieza</ion-label>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="3">
+        <ion-card (click)="irADulces()">
+          <ion-thumbnail>
+            <img src="assets/img/chupete.png">
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap ion-text-center">Dulceria</ion-label>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="3">
+        <ion-card (click)="irABebidas()">
+          <ion-thumbnail>
+            <img src="assets/img/bebidas.png">
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap ion-text-center">Bebidas</ion-label>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</section>
+
+<br><br>
+
+  <ion-label class="titulo">Productos más vendidos</ion-label>
+  
+  <ion-list>
+   
+    <ion-item class="producto-item" *ngFor="let producto of productos">
+      <div class="producto-contenedor">
+        <img [src]="producto.imagen" class="producto-img" />
+        <div class="producto-info">
+          <h2>{{ producto.nombre }}</h2>
+          <p>{{ producto.descripcion }}</p>
+          <p>Precio: ${{ producto.precio }}</p>
+        </div>
+      </div>
+      <ion-button color="success" (click)="agregarAlCarrito(producto)">Agregar</ion-button>
+    </ion-item>
+    
+  </ion-list>
+
 </ion-content>
+

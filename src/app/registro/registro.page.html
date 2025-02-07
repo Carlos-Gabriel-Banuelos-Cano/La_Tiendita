@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content  [fullscreen]="true">
+ 
+  <div id="container" class="container"> <img src="assets/img/Logo tienda.png"  class="logo"> 
+    <div class="title">Registro de usuario</div> 
+ 
+  <form  (ngSubmit)="register(registerForm)" #registerForm="ngForm">
+
+    <ion-card>
+      <ion-input class="inputs" name="nombre" [(ngModel)]="nombre" required label="Nombre de usuario" color="secundary" label-placement="floating" fill="outline" ></ion-input>
+
+      <ion-input class="inputs"   label="Apellido" color="secundary" label-placement="floating" fill="outline" ></ion-input>
+
+     <ion-input class="inputs" name="email" [(ngModel)]="email" email errorText="invalid"  type="email" required color="secundary"  fill="outline" label="Correo electrónico" label-placement="floating"
+   ></ion-input>
+ 
+   <ion-input class="password" name="pass" [(ngModel)]="pass"  type="password" required value="password" color="secundary" fill="outline" label="Contraseña" label-placement="floating" placeholder="Contraseña"></ion-input>
+
+   <ion-input class="password" name="conpass" [(ngModel)]="conpass"  type="password" required value="password" color="secundary" fill="outline" label="Confirmar contraseña" label-placement="floating" placeholder="Contraseña"></ion-input>
+  
+    </ion-card>
+
+      </form>
+
+  </div>
+  
+  <ion-button  routerLink="/login" color="tertiary" class="button-register" (click)="register(registerForm)"  expand="block" type="submit" [disabled]="registerForm.invalid">Registrar</ion-button>
+</ion-content>

@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  ion-title{
+    color: white;
+  }
+  
+  ion-toolbar{
+    background-color: var(--ion-color-colores1);
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 100px;
+    margin-bottom: 20px;
+    align-items: center;
+    align-content: center;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+    text-align: center;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Botones */
+  .button-ingresar{
+    padding: 50px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .button-registrar{
+    padding: 50px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .register-link {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .container2{
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;
+  }
+  
+  
+  .email{
+    padding: 20px;
+    background-color: #f0eeea;
+    color: #333;
+    width: 100%;
+  }
+  
+  .password{
+    padding: 20px;
+    background-color: #f0eeea;
+    color: #333;
+    width: 100%;
+  
+  }
+  
+  
+  

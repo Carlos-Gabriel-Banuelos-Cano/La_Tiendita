@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content  [fullscreen]="true">
+ 
+
+  <div id="container" class="container"> <img src="assets/img/Logo tienda.png"  class="logo"> 
+    <div class="title">Inicio de Sesión</div> 
+ 
+    <div class="container2">
+
+      <form (ngSubmit)="login2(loginForm)" #loginForm="ngForm">
+        <ion-input class="email"
+        [(ngModel)]="email"
+      type="email"
+      required
+      name="email"
+      color="medium"
+      fill="outline"
+      label="Correo electrónico"
+      labelPlacement="floating"
+      errorText="Correo invalido"
+      ngModel
+      email
+      ></ion-input>
+    
+      <ion-input class="password" 
+      [(ngModel)]="password"
+       type="password"
+       name="password"
+       required
+       color="medium"
+       fill="outline"
+       label="Contraseña"
+       labelPlacement="floating">
+       </ion-input>
+      </form>
+    </div>
+
+    
+ 
+    
+   <ion-button color="tertiary" expand="block" (click)="login()" type="submit" class="button-ingresar">Ingresar</ion-button>
+
+    <ion-button  color="tertiary" routerLink="/registro" type="button" class="button-registrar">Registrar</ion-button>
+     
+   </div>
+</ion-content>

@@ -1,0 +1,120 @@
+<ion-header class="cabecera">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="perfil"></ion-menu-button> <!-- Botón de menú vinculado correctamente -->
+    </ion-buttons>
+    <div class="logo-contenedor">
+      <img src="assets/img/Logo tienda.png" alt="Logo Tiendita" class="logo-img">
+      <ion-title>La Tiendita</ion-title>
+    </div>
+    <ion-buttons (click)="CerrarSesion()" slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="log-out-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+<!-- Menú lateral -->
+<ion-menu side="start" menu-id="perfil" content-id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item class="nose" routerLink="/home">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-item>
+      <ion-item class="nose" button routerLink="/carrito">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-label>Carrito</ion-label>
+      </ion-item>
+      <ion-item class="nose" button routerLink="/nosotros">
+        <ion-icon name="people-outline"></ion-icon>
+        <ion-label>Nosotros</ion-label>
+      </ion-item>
+
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <ion-item routerLink="/login" color="danger">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <ion-label>Cerrar sesión</ion-label>
+    </ion-item>
+
+  </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<ion-content id="main-content">
+
+  <ion-content class="ion-padding">
+
+    <ion-label class="titulo">Mi cuenta</ion-label>
+
+    <div class="perfil-container">
+      <div class="perfil-info">
+        <ion-avatar class="avatar grande">
+          <img src="assets/img/kurco.jpg" alt="Imagen de perfil">
+        </ion-avatar>
+        <div class="datos-usuario">
+          <h2>Kurt Cobain</h2>
+          <p>correoejemplo.com</p>
+        </div>
+      </div>
+      <!-- Botón de editar agregado aquí -->
+      <div class="boton-editar-container">
+        <ion-button expand="full" color="primary" shape="round">
+          <ion-icon name="pencil-outline" slot="start"></ion-icon>Editar
+        </ion-button>
+      </div>
+    </div>
+
+    <ion-label class="titulo">Otros</ion-label>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <ion-card >
+            <ion-thumbnail>
+              <img src="assets/img/cupon.png">
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap ion-text-center">Cupones</ion-label>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="3">
+          <ion-card>
+            <ion-thumbnail>
+              <img src="assets/img/pedidos.png">
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap ion-text-center">Pedidos</ion-label>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="3">
+          <ion-card >
+            <ion-thumbnail>
+              <img src="assets/img/comen.png">
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap ion-text-center">Comentarios</ion-label>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="3">
+          <ion-card >
+            <ion-thumbnail>
+              <img src="assets/img/ubi.png">
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap ion-text-center">Mi Ubicación</ion-label>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </ion-content>
+
+</ion-content>

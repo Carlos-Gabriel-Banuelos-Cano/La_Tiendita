@@ -1,0 +1,122 @@
+/* Estilos para la cabecera */
+.cabecera {
+    padding-bottom: 10px;
+  }
+  
+  ion-toolbar {
+    --background: rgb(253, 161, 210); /* Color de fondo de la barra */
+  }
+  
+  ion-title {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 30px;
+  }
+  
+  /* Estilos para el botón del menú */
+  ion-menu-button {
+    color: #fff;
+  }
+  
+  /* Estilos para el logo y su contenedor */
+  .logo-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left: 10px;
+  }
+  
+  .logo-img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
+  
+  /* Estilos para el menú lateral */
+  ion-menu {
+    --width: 250px;
+  }
+  
+  ion-list {
+    padding: 0;
+  }
+  
+  .nose{
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    align-items: center; /* Alineación de los íconos y etiquetas */
+    padding-left: 20px; /* Distancia al lado izquierdo */
+  }
+  
+  ion-item ion-icon {
+    margin-right: 15px;
+    font-size: 24px;
+  }
+  
+  ion-item ion-label {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  ion-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para los botones */
+  ion-button {
+    margin-left: 20px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  ion-button:hover {
+    background-color: #ff69b4;
+    color: #fff;
+  }
+
+  section.acerca-de {
+    padding:  0;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.texto-iframe {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.texto {
+    flex: 1;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+.mapa {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen img {
+    max-width: 100%;
+    height: auto;
+}
+  

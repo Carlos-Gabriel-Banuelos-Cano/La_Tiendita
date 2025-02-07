@@ -1,0 +1,73 @@
+<ion-header class="cabecera">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="carrito"></ion-menu-button> <!-- Botón de menú vinculado correctamente -->
+    </ion-buttons>
+    <div class="logo-contenedor">
+      <img src="assets/img/Logo tienda.png" alt="Logo Tiendita" class="logo-img">
+      <ion-title>La Tiendita</ion-title>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button color="danger" (click)="vaciarCarrito()">Vaciar Carrito</ion-button>
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+<!-- Menú lateral -->
+<ion-menu side="start" menu-id="carrito" content-id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item class="nose"routerLink="/home">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-item>
+      <ion-item class="nose"button routerLink="/abarrotes">
+        <ion-icon name="fast-food-outline"></ion-icon>
+        <ion-label>Productos</ion-label>
+      </ion-item>
+      <ion-item class="nose"button routerLink="/perfil">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </ion-item>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <ion-item routerLink="/login" color="danger">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <ion-label>Cerrar sesión</ion-label>
+    </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-content id="main-content">
+    
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let producto of carrito">
+      <ion-thumbnail slot="start">
+        <img [src]="producto.imagen" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ producto.nombre }}</h2>
+        <p>${{ producto.precio }}</p>
+      </ion-label>
+      <ion-button color="danger" (click)="eliminarDelCarrito(producto)">Eliminar</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <br><br><br><br><br>  <br><br><br><br><br>
+  <br><br><br><br><br>  <br><br><br><br><br>
+  <br><br>
+
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>Total: ${{ total }}</ion-title>
+      <ion-button  color="success" class="comprar-btn" (click)="generarPDF()">Comprar</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

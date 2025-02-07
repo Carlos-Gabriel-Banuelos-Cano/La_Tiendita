@@ -1,0 +1,156 @@
+/* Estilos generales para el menú */
+ion-menu {
+  --width: 250px; /* Ancho del menú */
+}
+
+ion-menu-button {
+  color: #fff; /* Color del ícono de menú */
+}
+
+ion-toolbar {
+  --background: rgb(253, 161, 210); /* Color de fondo de la barra */
+}
+
+ion-title {
+  color: white; /* Color del título */
+}
+
+/* Menú y título */
+ion-list {
+  padding: 0;
+}
+
+
+.nose{
+  font-size: 18px;
+  color: #333;
+  display: flex;
+  align-items: center; /* Alineación de los íconos y etiquetas */
+  padding-left: 20px; /* Distancia al lado izquierdo */
+}
+
+ion-item ion-icon {
+  margin-right: 15px; /* Distancia entre el ícono y el texto */
+  font-size: 24px; /* Tamaño del ícono */
+}
+
+ion-item ion-label {
+  font-weight: bold;
+  font-size: 18px; /* Tamaño de la fuente */
+}
+
+ion-item:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Efecto hover */
+}
+
+/* Estilo del logo */
+.logo-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-left: 10px; /* Espacio inicial de la izquierda */
+}
+
+.logo-img {
+  width: 100px;  /* Ajusta el tamaño del logo */
+  height: 100px;
+  margin-right: 10px; /* Espacio entre el logo y el texto */
+}
+
+.titulo {
+  
+  font-size: 1.3rem;
+  color: #000000;
+  padding-left: 5px;
+  margin: 0;
+  margin-top: 10px; /* Añadir margen superior */
+}
+
+ion-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;  /* Color del texto */
+  margin-left: 30px; /* Alineación del título respecto al logo */
+}
+
+/* Estilos para los productos */
+.producto-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+  margin-bottom: 15px; /* Espacio entre productos */
+}
+
+.producto-contenedor {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.producto-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.producto-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-info h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.producto-info p {
+  font-size: 14px;
+  margin: 5px 0 0;
+  color: #666; /* Gris suave */
+}
+
+/* Estilo general del contenedor */
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Estilos para los botones */
+ion-button {
+  margin-left: 20px; /* Separación entre botones */
+  height: 40px;
+  font-size: 14px;
+}
+
+/* Efecto hover para los botones */
+ion-button:hover {
+  background-color: #ff69b4; /* Color rosa claro */
+  color: #fff;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  header.bg-pink .titulo {
+    font-size: 24px;
+  }
+
+  .navbar {
+    height: auto; /* Ajuste dinámico para pantallas pequeñas */
+  }
+}
