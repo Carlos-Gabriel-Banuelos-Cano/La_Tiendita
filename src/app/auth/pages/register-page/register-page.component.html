@@ -1,0 +1,49 @@
+<div class="flex flex-column">
+    <span class="text-lg mb-4">Registro</span>
+
+    <mat-form-field>
+        <mat-label>Nombre(s)</mat-label>
+        <input type="text" maxlength="20" matInput placeholder="Ingresa tu nombre(s)">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Apellido Paterno</mat-label>
+        <input type="text" maxlength="25" matInput placeholder="Ingresa tu apellido paterno">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Apellido Materno</mat-label>
+        <input type="text" maxlength="25" matInput placeholder="Ingresa tu apellido materno">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Nombre de usuario</mat-label>
+        <input type="text" maxlength="20" matInput placeholder="Ingresa un nombre de usuario">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Correo</mat-label>
+        <input type="email" maxlength="40" matInput placeholder="Ingresa un correo electrónico">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Numero telefónico</mat-label>
+        <input type="tel" maxlength="10" matInput placeholder="Ingresa un numero de telefono">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input type="password" maxlength="16" matInput placeholder="Crea una contraseña">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Confirmar contraseña</mat-label>
+        <input type="password" maxlength="16" matInput placeholder="Confirma tu contraseña">
+    </mat-form-field>
+
+    <button mat-button mat-flat-button routerLink="/auth/login">
+        <mat-icon>home</mat-icon>
+        Registrarse
+    </button>
+
+</div>
