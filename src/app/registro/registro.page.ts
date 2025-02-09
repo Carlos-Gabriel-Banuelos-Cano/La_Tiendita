@@ -8,7 +8,6 @@ import { AlertController, NavController } from '@ionic/angular';
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
   standalone: false,
-  //imports:[IonContent,IonHeader, IonTitle, IonToolbar, IonButton, IonMenuButton, IonButtons, RouterLink, IonInput, IonItem, IonList, IonText]
 })
 export class RegistroPage implements OnInit {
   formularioRegistro: FormGroup;

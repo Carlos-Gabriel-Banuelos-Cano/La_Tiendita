@@ -4,7 +4,7 @@
   }
   
   ion-toolbar {
-    --background: rgb(253, 161, 210); /* Color de fondo de la barra */
+    --background: rgb(253, 161, 210); 
   }
   
   ion-title {
@@ -14,12 +14,12 @@
     margin-left: 30px;
   }
   
-  /* Estilos para el botón del menú */
+  
   ion-menu-button {
     color: #fff;
   }
   
-  /* Estilos para el logo y su contenedor */
+  
   .logo-contenedor {
     display: flex;
     align-items: center;
@@ -46,8 +46,8 @@
     font-size: 18px;
     color: #333;
     display: flex;
-    align-items: center; /* Alineación de los íconos y etiquetas */
-    padding-left: 20px; /* Distancia al lado izquierdo */
+    align-items: center; 
+    padding-left: 20px;
   }
   
   ion-item ion-icon {

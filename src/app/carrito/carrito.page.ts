@@ -58,10 +58,7 @@ export class CarritoPage {
   
       doc.text(`Total: $${this.totalCarrito()}`, 10, yPosition);
   
-      // Guardar el PDF con un nombre
       doc.save('compra.pdf');
-  
-      // Vaciar el carrito después de generar el PDF
-      this.vaciarCarrito();
+        this.vaciarCarrito();
     }
   }

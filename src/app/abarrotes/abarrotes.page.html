@@ -1,7 +1,7 @@
 <ion-header class="cabecera">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button menu="abarrotes"></ion-menu-button> <!-- Botón de menú vinculado correctamente -->
+      <ion-menu-button menu="abarrotes"></ion-menu-button> 
     </ion-buttons>
     <div class="logo-contenedor">
       <img src="assets/img/Logo tienda.png" alt="Logo Tiendita" class="logo-img">
@@ -53,14 +53,14 @@
 </ion-menu>
 
 
-<!-- Contenido principal -->
 <ion-content id="main-content">
 
   <ion-label class="titulo">Abarrotes</ion-label>
+  <ion-searchbar placeholder="Busca lo que necesites" (ionChange)="buscar($event)">
+
 
   <ion-grid>
     <ion-row class="ion-justify-content-center">
-      <!-- Botón 1 -->
       <ion-col size="4" size-md="auto">
         <ion-button expand="block" color="light" routerLink="/limpieza">
           <img src="assets/img/limpio.png" alt="Limpieza" style="width: 24px; height: 24px; margin-right: 8px;">
@@ -68,7 +68,6 @@
         </ion-button>
       </ion-col>
   
-      <!-- Botón 2 -->
       <ion-col size="4" size-md="auto">
         <ion-button expand="block" color="light" routerLink="/dulceria">
           <img src="assets/img/chupete.png" alt="Dulcería" style="width: 24px; height: 24px; margin-right: 8px;">
@@ -76,7 +75,6 @@
         </ion-button>
       </ion-col>
   
-      <!-- Botón 3 -->
       <ion-col size="4" size-md="auto">
         <ion-button expand="block" color="light" routerLink="/bebidas">
           <img src="assets/img/bebidas.png" alt="Bebidas" style="width: 24px; height: 24px; margin-right: 8px;">
