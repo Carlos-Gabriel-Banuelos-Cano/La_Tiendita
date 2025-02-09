@@ -8,7 +8,11 @@ import { Router } from '@angular/router';
   standalone: false,
 })
 export class AbarrotesPage implements OnInit {
-  productos = [
+  productos: { id: number; nombre: string; descripcion: string; precio:number; imagen: string; }[] = [];
+
+  constructor(private router: Router) {}
+  inicializar() {
+  this.productos = [
     { id: 1, nombre: 'Arroz Schettino', descripcion: 'Arroz Schettino Super Extra 900g', precio: 16.00, imagen: 'assets/img/arrox.png' },
     { id: 2, nombre: 'Frijol Negro', descripcion: 'Frijol Negro La Sierra 1kg', precio: 24.50, imagen: 'assets/img/frijoles.png' },
     { id: 3, nombre: 'Aceite Nutrioli', descripcion: 'Aceite comestible 123 1L', precio: 30.00, imagen: 'assets/img/nutrioli.png' },
@@ -17,10 +21,19 @@ export class AbarrotesPage implements OnInit {
     { id: 6, nombre: 'Azúcar Bueno', descripcion: 'Azúcar Bueno 2Kg', precio: 49.00, imagen: 'assets/img/azucar.png'}
 
   ];
+}
+  
+buscar(ev: any) {
+  this.inicializar();
 
-  constructor(private router: Router) {}
+  const val = ev.target.value;
 
-  ngOnInit() {}
+  if (val && val.trim() !== '') {
+    this.productos = this.productos.filter((item) => {
+      return item.nombre.toLowerCase().includes(val.toLowerCase());
+    });
+  }
+}
 
   irACarrito() {
     this.router.navigate(['/carrito']);
@@ -32,4 +45,6 @@ export class AbarrotesPage implements OnInit {
     localStorage.setItem('carrito', JSON.stringify(carrito));
     alert('Producto añadido al carrito');
   }
+
+  ngOnInit() {}
 }
