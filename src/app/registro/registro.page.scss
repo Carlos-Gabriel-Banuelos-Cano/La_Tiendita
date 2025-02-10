@@ -1,32 +1,42 @@
-ion-content{
-    color: black;
-    --background: url('/assets/img/niño1.jpg') no-repeat center center / cover;
-
-}
-
-ion-input{
-    color: rgb(255, 255, 255);
-    --background: rgb(184, 183, 183);
-    margin-top: 20px;
-}
-
-ion-card{
-    --background: url('/assets/img/niño1.jpg') no-repeat center center / cover;
-
-}
-
-
-.container {
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .logo {
+.logo {
     width: 100px;
     margin-bottom: 20px;
-    align-items: center;
-    align-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+    text-align: center;
   }
+ion-input {
+    --background: #f7f3ee; 
+    --color: black; 
+    --placeholder-color: gray;
+    --padding-start: 15px;
+    --border-radius: 8px;
+    --box-shadow: none;
+    --border: 1px solid #d3cfc9; 
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+ion-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-register {
+    background-color: #b19cd9; 
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 18px;
+}
