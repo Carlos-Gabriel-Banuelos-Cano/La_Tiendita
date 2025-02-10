@@ -1,0 +1,53 @@
+.banner {
+    background-image: linear-gradient(100deg, #000000, rgba(0, 0, 0, 0.125)), url('/src/assets/img/Logo\ tienda.png');
+    background-repeat: repeat;
+    height: 40rem;
+    background-position: center;
+    background-size: auto;
+    display: flex;
+    align-items: center;
+}
+
+.content-banner {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 10rem 2rem; /* Ajuste de padding para margen interno */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.banner-texto {
+    max-width: 40%;
+    margin-right: 2rem; /* Espacio entre el texto y el borde */
+}
+
+.banner-texto h2 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.banner-texto a {
+    margin-top: 2rem;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(253, 161, 210);
+    display: inline-block;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    border-radius: 3rem;
+}
+
+.carousel-banner {
+    width: 50%; 
+    margin-left: 2rem; 
+    margin-right: 2rem; 
+}
+
+.carousel-inner img {
+    height: auto; 
+    object-fit: cover;
+}

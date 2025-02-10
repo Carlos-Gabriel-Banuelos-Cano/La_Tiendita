@@ -1,0 +1,51 @@
+.top-categorias {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contenedor-cat {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.card-categoria {
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    gap: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.card-categoria:hover {
+    transform: translateY(-10px);
+}
+
+.categoria-abarrotes {
+    background-image: linear-gradient(#00000080, #00000080), url('/assets/img/abarroteslo.jpg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+.categoria-limpieza {
+    background-image: linear-gradient(#00000080, #00000080), url('/assets/img/limpieza.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+.categoria-dulceria {
+    background-image: linear-gradient(#00000080, #00000080), url('/assets/img/dulceria.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
