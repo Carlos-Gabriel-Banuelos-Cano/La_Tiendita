@@ -12,11 +12,11 @@ import { AlertController, NavController } from '@ionic/angular';
 export class RegistroPage implements OnInit {
   formularioRegistro: FormGroup;
 
-  nombre: String ='';
+  name: String ='';
   email: String ='';
   tel: String ='';
-  pass: String ='';
-  conpass: String ='';
+  password: String ='';
+  confirm_password: String ='';
 
 
 

@@ -9,16 +9,16 @@
   <form  (ngSubmit)="register(registerForm)" #registerForm="ngForm">
 
     <ion-card>
-      <ion-input class="inputs" name="nombre" [(ngModel)]="nombre" required label="Nombre de usuario" color="secundary" label-placement="floating" fill="outline" ></ion-input>
+      <ion-input class="inputs" name="nombre" [(ngModel)]="name" required label="Nombre de usuario" color="secundary" label-placement="floating" fill="outline" ></ion-input>
 
       <ion-input class="inputs"   label="Apellido" color="secundary" label-placement="floating" fill="outline" ></ion-input>
 
      <ion-input class="inputs" name="email" [(ngModel)]="email" email errorText="invalid"  type="email" required color="secundary"  fill="outline" label="Correo electrónico" label-placement="floating"
    ></ion-input>
  
-   <ion-input class="password" name="pass" [(ngModel)]="pass"  type="password" required value="password" color="secundary" fill="outline" label="Contraseña" label-placement="floating" placeholder="Contraseña"></ion-input>
+   <ion-input class="password" name="pass" [(ngModel)]="password"  type="password" required value="password" color="secundary" fill="outline" label="Contraseña" label-placement="floating" placeholder="Contraseña"></ion-input>
 
-   <ion-input class="password" name="conpass" [(ngModel)]="conpass"  type="password" required value="password" color="secundary" fill="outline" label="Confirmar contraseña" label-placement="floating" placeholder="Contraseña"></ion-input>
+   <ion-input class="password" name="conpass" [(ngModel)]="confirm_password"  type="password" required value="password" color="secundary" fill="outline" label="Confirmar contraseña" label-placement="floating" placeholder="Contraseña"></ion-input>
   
     </ion-card>
 
