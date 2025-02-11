@@ -1,14 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const connectDB = require('./config/db');
 const app = express();
 const port = 3000;
 
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/sistema_dispositivos', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+connectDB();
 
 const dispositivoRoutes = require('./routes/dispositivoRoutes');
 const eventoRoutes = require('./routes/eventoRoutes');
