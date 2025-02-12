@@ -1,0 +1,25 @@
+<app-barra></app-barra>
+<div class="contenido">
+    <h1>Nuevo Producto</h1>
+    <form id="form-producto" (submit)="agregarProducto()">
+        <div class="form-group">
+            <label for="nombreProducto">Nombre del Producto:</label>
+            <input type="text" maxlength="50" id="Nom_Prod" name="nombreProducto" [(ngModel)]="producto.nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <input type="text" maxlength="100" id="Desc_Prod" name="descripcion" [(ngModel)]="producto.descripcion" required>
+        </div>
+        <div class="form-group">
+            <label for="precio">Precio:</label>
+            <input type="text" maxlength="10" id="Precio_Venta" name="precio" [(ngModel)]="producto.precio" required>
+        </div>
+        <div class="form-group">
+            <label for="cantidad">Cantidad:</label>
+            <input type="text" maxlength="30" id="Existencia" name="cantidad" [(ngModel)]="producto.cantidad" required>
+        </div>
+        <div class="btn-agregar">
+            <button type="submit">Agregar</button>
+        </div>
+    </form>
+</div>

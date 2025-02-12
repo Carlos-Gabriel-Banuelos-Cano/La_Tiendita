@@ -35,7 +35,7 @@
 }
 
 .categoria-limpieza {
-    background-image: linear-gradient(#00000080, #00000080), url('/assets/img/limpieza.jpg');
+    background-image: linear-gradient(#00000080, #00000080), url('/assets/img/limpio.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -43,9 +43,37 @@
 }
 
 .categoria-dulceria {
-    background-image: linear-gradient(#00000080, #00000080), url('/assets/img/dulceria.jpg');
+    background-image: linear-gradient(#00000080, #00000080), url('/assets/img/dulces.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding: 10px;
+}
+
+.card-categoria p {
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.card-categoria p::after {
+    content: '';
+    width: 2.5rem;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.card-categoria span {
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card-categoria span:hover {
+    color: rgb(253, 161, 210);
 }

@@ -1,0 +1,86 @@
+.contenido {
+    padding: 20px;
+    margin-left: 250px; /* Ajusta este valor según el ancho de tu barra */
+}
+
+app-barra {
+    position: fixed;
+    width: 250px; /* Ajusta según el tamaño real de la barra */
+    height: 100%;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: black;
+    overflow: hidden;
+}
+
+
+thead {
+    background-color: #ff69b4; 
+    color: white;
+}
+
+
+th {
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+}
+
+
+td {
+    text-align: center;
+    padding: 12px;
+    background-color: #ffffff;
+}
+
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; 
+}
+
+
+
+.btn-agregar button {
+    background-color: rgb(116, 101, 182); 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+
+.btn-agregar button:hover {
+    background-color: rgb(137, 127, 182); 
+}
+
+
+
+
+
+.fa {
+    margin-right: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .contenido {
+        padding: 10px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    .btn-agregar button {
+        padding: 8px 15px;
+    }
+}

@@ -1,1 +1,30 @@
 <app-header></app-header>
+
+<br>
+     <h1 class="tituloc">Carrito de Compras</h1>
+    <main>
+        <section id="cart-section">
+            <ul id="cart" class="list-group"></ul>
+            <div class="cart-summary">
+                <p>Total: $<span id="total">0</span></p>
+            </div>
+            <button id="vaciar-carrito" class="btn btn-danger" onclick="vaciar()">Vaciar carrito</button>
+            <br>
+            <button class="btn btn-success" onclick="comprar()">Comprar</button>
+        </section>
+    </main>
+    <script src="carrito.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCart();
+            document.querySelector('#vaciar-carrito').addEventListener('click', () => {
+                let cart = [];
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartDisplay();
+            });
+        });
+    </script>
+
+<app-footer></app-footer>
+
+

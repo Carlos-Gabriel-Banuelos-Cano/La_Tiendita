@@ -1,0 +1,33 @@
+<app-barra></app-barra>
+<div class="contenido">
+    <h1>Productos</h1>
+    <p>Gestión de productos</p>
+    <div class="btn-agregar">
+        <a href="/tiendita/registro-productos">
+            <button><i class="fa fa-plus"></i> Agregar Producto</button>
+        </a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre del Producto</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Operaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of productos; let i = index">
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.descripcion }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>{{ producto.cantidad }}</td>
+                <td>
+                    <button (click)="editarProducto(i)">Editar</button>
+                    <button (click)="eliminarProducto(i)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

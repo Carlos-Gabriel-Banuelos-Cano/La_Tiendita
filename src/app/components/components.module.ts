@@ -4,6 +4,7 @@ import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { BannerComponent } from './pages/banner/banner.component';
+import { BarraComponent } from './pages/barra/barra.component';
 
 
 
@@ -12,7 +13,8 @@ import { BannerComponent } from './pages/banner/banner.component';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    BannerComponent
+    BannerComponent,
+    BarraComponent,
   ],
   imports: [
     CommonModule

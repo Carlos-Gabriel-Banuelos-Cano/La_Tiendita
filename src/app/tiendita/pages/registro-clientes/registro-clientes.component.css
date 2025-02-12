@@ -1,0 +1,42 @@
+.contenido {
+    padding: 20px;
+    margin-left: 250px; /* Ajusta este valor según el ancho de tu barra */
+}
+
+app-barra {
+    position: fixed;
+    width: 250px; /* Ajusta según el tamaño real de la barra */
+    height: 100%;
+}
+
+form {
+    margin: auto;
+    padding-right: 50px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.btn-agregar {
+    margin-bottom: 20px;
+}
+.btn-agregar button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(116, 101, 182);
+    color: white;
+    transition: background-color 0.3s;
+}
+.btn-agregar button:hover {
+    background-color: rgb(95, 83, 151);
+}

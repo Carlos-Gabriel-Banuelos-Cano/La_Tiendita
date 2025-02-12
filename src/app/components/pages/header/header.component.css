@@ -1,28 +1,83 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5a1;
+/* Estilos del Header */
+.header {
+    background-color: #f8a8d0;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Asegura que nada lo tape */
+    z-index: 100;
+    width: 100%;
 }
 
-/* Barra de navegación */
-.bg-pink {
-    background-color: rgb(253, 161, 210) !important;
+/* Contenedor principal */
+.container {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 101; /* Prioridad sobre otros elementos */
 }
 
-.navbar-nav .nav-link {
-    color: #000000 !important;
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
+    height: 80px;
 }
 
+/* Título */
 .titulo {
-    color: rgb(255, 255, 255);
     font-size: 40px;
-    margin: 0;
+    color: white;
     text-decoration: none;
+    font-weight: bold;
     margin-left: 10px;
+}
+
+/* Menú de navegación */
+.nav {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    display: inline-block;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    z-index: 102; /* Asegura que los enlaces sean clickeables */
+}
+
+/* Asegurar que los enlaces sean clickeables */
+.nav-list li a:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Solución de posibles elementos superpuestos */
+* {
+    position: relative;
+    z-index: 1;
 }

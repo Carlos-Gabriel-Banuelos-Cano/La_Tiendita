@@ -1,0 +1,9 @@
+footer {
+    position: relative;
+    color: white;
+    background: rgb(253, 161, 210);
+    padding: 10px 0px;
+    text-align: center;
+    clear: both;
+    font-family: 'Times New Roman', Times, serif;
+}

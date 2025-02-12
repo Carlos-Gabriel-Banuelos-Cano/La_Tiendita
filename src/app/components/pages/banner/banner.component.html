@@ -1,35 +1,18 @@
-
 <section class="banner">
-    <div class="content-banner d-flex align-items-center justify-content-between">
+  <div class="content-banner d-flex align-items-center justify-content-between">
       <div class="banner-texto">
-        <h2>Abarrotes <br>La Tiendita</h2>
-       <button mat-button mat-flat-button routerLink="/tiendita/categorias">Comprar ahora</button>
+          <h2>Abarrotes <br>La Tiendita</h2>
+          <a routerLink="/tiendita/categorias">Comprar ahora</a>
       </div>
-  
-      <div id="carouselExampleIndicators" class="carousel slide carousel-banner">
-        <div class="carousel-indicators">
-          <button *ngFor="let img of images; let i = index"
-            type="button"
-            [attr.data-bs-target]="'#carouselExampleIndicators'"
-            [attr.data-bs-slide-to]="i"
-            [class.active]="i === 0"
-            [attr.aria-current]="i === 0 ? 'true' : null"
-            [attr.aria-label]="'Slide ' + (i + 1)">
-          </button>
+
+      <div class="carousel">
+        <div #carouselContainer class="carousel-container">
+            <div class="slide"><img src="assets/img/promo-viky.png" alt="Imagen 1"></div>
+            <div class="slide"><img src="assets/img/promo-limpieza.png" alt="Imagen 2"></div>
+            <div class="slide"><img src="assets/img/promo-dulces.png" alt="Imagen 3"></div>
         </div>
-        <div class="carousel-inner">
-          <div *ngFor="let img of images; let i = index" class="carousel-item" [ngClass]="{ 'active': i === 0 }">
-            <img [src]="img.src" class="d-block w-100" [alt]="img.alt">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <button class="prev" (click)="moveSlide(-1)">&#10094;</button>
+        <button class="next" (click)="moveSlide(1)">&#10095;</button>
       </div>
-    </div>
-  </section>
+  </div>
+</section>

@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Error404Component } from './shared/pages/error404/error404.component';
+import { UsuariosComponent } from './tiendita/pages/usuarios/usuarios.component';
+import { RegistroUsuariosComponent } from './tiendita/pages/registro-usuarios/registro-usuarios.component';
+
 
 const routes: Routes = [
   {
@@ -11,6 +14,7 @@ const routes: Routes = [
     path: 'tiendita',
     loadChildren: () => import('./tiendita/tiendita.module').then(m => m.TienditaModule),
   },
+ 
   {
     path: '404',
     component: Error404Component,

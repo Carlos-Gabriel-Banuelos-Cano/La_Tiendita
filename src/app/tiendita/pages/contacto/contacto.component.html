@@ -1,0 +1,23 @@
+<app-header></app-header>
+
+
+<form>
+    <h2>Contactanos!</h2>
+    <div class="input-group">
+        <label for="name">Nombre</label>
+        <input type="text" maxlength="40" name="name" id="name" placeholder="Nombre">
+    <br>
+        <label for="phone">Teléfono</label>
+        <input type="tel" maxlength="11" name="phone" id="phone" placeholder="Teléfono">
+    <br>
+        <label for="email">Correo</label>
+        <input type="email" maxlength="30" name="email" id="email" placeholder="Correo">
+    <br>
+        <label for="message">Mensaje</label>
+        <textarea name="message" maxlength="250" id="message" cols="30" rows="5" placeholder="Mensaje"></textarea>
+    <br>
+        <input class="btn" onclick="enviar()" type="submit" value="Enviar">
+    </div>
+</form>
+
+<app-footer></app-footer>

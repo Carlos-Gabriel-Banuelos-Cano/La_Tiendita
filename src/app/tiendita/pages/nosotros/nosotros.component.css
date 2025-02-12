@@ -1,0 +1,43 @@
+section.acerca-de {
+    padding: 2rem 0;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.texto-iframe {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.texto {
+    flex: 1;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+.mapa {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen img {
+    max-width: 100%;
+    height: auto;
+}
