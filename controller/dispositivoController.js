@@ -1,4 +1,14 @@
+const mongoose = require('mongoose');
 const Dispositivo = require('../models/DispositivoModel');
+
+exports.getAllDispositivos = async (req, res) => {
+  try {
+    const dispositivos = await Dispositivo.find();
+    res.json(dispositivos);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 
 exports.getDispositivoById = async (req, res) => {
   try {
@@ -7,6 +17,23 @@ exports.getDispositivoById = async (req, res) => {
       return res.status(404).json({ msg: 'Dispositivo no encontrado' });
     }
     res.json(dispositivo);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.createDispositivo = async (req, res) => {
+  try {
+    const { nombre, tipo, ubicacion, sensores, actuadores } = req.body;
+
+    // Validar datos
+    if (!nombre || !tipo) {
+      return res.status(400).json({ error: 'Nombre y tipo son obligatorios' });
+    }
+
+    const nuevoDispositivo = new Dispositivo({ nombre, tipo, ubicacion, sensores, actuadores });
+    await nuevoDispositivo.save();
+    res.status(201).json(nuevoDispositivo);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
