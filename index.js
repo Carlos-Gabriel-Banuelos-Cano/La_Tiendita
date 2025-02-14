@@ -11,8 +11,8 @@ connectDB();
 const dispositivoRoutes = require('./routes/dispositivoRoutes');
 const eventoRoutes = require('./routes/eventoRoutes');
 
-app.use('/api/dispositivos', dispositivoRoutes);
-app.use('/api/eventos', eventoRoutes);
+app.use('/dispositivos', dispositivoRoutes);
+app.use('/eventos', eventoRoutes);
 
 app.listen(port, () => {
   console.log(`API corriendo en http://localhost:${port}`);
