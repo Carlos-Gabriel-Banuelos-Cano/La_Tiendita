@@ -4,12 +4,20 @@ const { Schema } = mongoose;
 // Definir esquemas para sensores y actuadores
 const SensorSchema = new Schema({
   nombre: { type: String, required: true },
-  tipo: { type: String, required: true },
+  tipo: { 
+    type: String, 
+    required: true, 
+    enum: ['temperatura', 'humedad', 'presion', 'movimiento', 'otro'], // ejemplo de valores posibles
+  },
 });
 
 const ActuadorSchema = new Schema({
   nombre: { type: String, required: true },
-  tipo: { type: String, required: true },
+  tipo: { 
+    type: String, 
+    required: true, 
+    enum: ['encendido', 'apagado', 'abierto', 'cerrado', 'otro'], // ejemplo de valores posibles
+  },
 });
 
 // Definir esquema para Dispositivo
