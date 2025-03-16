@@ -1,0 +1,7 @@
+{
+  "name": "Integratienda",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
