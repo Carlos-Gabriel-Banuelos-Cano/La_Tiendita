@@ -1,0 +1,91 @@
+<ion-header class="cabecera">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="pedidos"></ion-menu-button> 
+    </ion-buttons>
+    <div class="logo-contenedor">
+      <img src="assets/img/Logo tienda.png" alt="Logo Tiendita" class="logo-img">
+      <ion-title>La Tiendita</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Menu lateral -->
+<ion-menu side="start" menu-id="pedidos" content-id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item class="nose"routerLink="/home">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-item>
+      <ion-item class="nose" button routerLink="/abarrotes">
+        <ion-icon name="fast-food-outline"></ion-icon>
+        <ion-label>Productos</ion-label>
+      </ion-item>
+      <ion-item class="nose" button routerLink="/carrito">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-label>Carrito</ion-label>
+      </ion-item>
+      <ion-item class="nose" button routerLink="/nosotros">
+        <ion-icon name="people-outline"></ion-icon>
+        <ion-label>Nosotros</ion-label>
+      </ion-item>
+      <ion-item class="nose" button routerLink="/perfil">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </ion-item>
+
+      
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item class="logout" routerLink="/login" color="danger">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <ion-label>Cerrar sesión</ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>
+
+</ion-menu>
+
+<!-- Contenido principal -->
+<ion-content id="main-content">
+  <ion-list *ngIf="pedidos.length > 0; else noPedidos">
+    <ion-list *ngFor="let pedido of pedidos; let i = index">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Pedido #{{ pedido.id }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let producto of pedido.productos">
+              <ion-label>
+                <h3>{{ producto.nombre }}</h3>
+                <p>Precio: ${{ producto.precio }}</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+          <ion-text>Total: <strong>${{ pedido.total }}</strong></ion-text>
+
+          <!-- Botón para cancelar el pedido -->
+          <ion-button color="danger" expand="full" (click)="cancelarPedido(i)">
+            Cancelar Pedido
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </ion-list>
+
+  <ng-template #noPedidos>
+    <ion-label class="ion-text-center">
+      No tienes pedidos registrados.
+    </ion-label>
+  </ng-template>
+</ion-content>
