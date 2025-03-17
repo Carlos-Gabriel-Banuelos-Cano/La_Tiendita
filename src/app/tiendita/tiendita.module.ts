@@ -23,6 +23,7 @@ import { RegistroProductosComponent } from './pages/registro-productos/registro-
 import { RegistroUsuariosComponent } from './pages/registro-usuarios/registro-usuarios.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
 
@@ -49,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
           RegistroClientesComponent,
           RegistroProductosComponent,
           RegistroUsuariosComponent,
+          DashboardComponent,
   ],
   imports: [
     CommonModule,

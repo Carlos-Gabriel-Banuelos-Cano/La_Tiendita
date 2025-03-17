@@ -7,10 +7,11 @@
             <button><i class="fa fa-plus"></i> Agregar Producto</button>
         </a>
     </div>
+    
     <table>
         <thead>
             <tr>
-                <th>Nombre del Producto</th>
+                <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
@@ -21,13 +22,40 @@
             <tr *ngFor="let producto of productos; let i = index">
                 <td>{{ producto.nombre }}</td>
                 <td>{{ producto.descripcion }}</td>
-                <td>{{ producto.precio }}</td>
+                <td>{{ producto.precio | currency }}</td>
                 <td>{{ producto.cantidad }}</td>
                 <td>
-                    <button (click)="editarProducto(i)">Editar</button>
-                    <button (click)="eliminarProducto(i)">Eliminar</button>
+                    <button class="editar" (click)="editarProducto(i)" [disabled]="editando">Editar</button>
+                    <button class="eliminar" (click)="confirmarEliminacion(i)">Eliminar</button>
                 </td>
             </tr>
         </tbody>
     </table>
+
+    <!-- Formulario de edición -->
+    <div *ngIf="editIndex !== null" class="form-edicion">
+        <h2>Editar Producto</h2>
+        <form (ngSubmit)="guardarEdicion()">
+            <div class="form-group">
+                <label>Nombre:</label>
+                <input type="text" [(ngModel)]="productoEditando.nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label>Descripción:</label>
+                <input type="text" [(ngModel)]="productoEditando.descripcion" name="descripcion" required>
+            </div>
+            <div class="form-group">
+                <label>Precio:</label>
+                <input type="number" [(ngModel)]="productoEditando.precio" name="precio" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>Cantidad:</label>
+                <input type="number" [(ngModel)]="productoEditando.cantidad" name="cantidad" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-guardar">Guardar Cambios</button>
+                <button type="button" class="btn-cancelar" (click)="cancelarEdicion()">Cancelar</button>
+            </div>
+        </form>
+    </div>
 </div>

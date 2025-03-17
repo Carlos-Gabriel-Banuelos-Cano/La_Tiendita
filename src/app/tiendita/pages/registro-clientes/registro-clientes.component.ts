@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ClienteService } from '../cliente.service';
 
 @Component({
   selector: 'app-registro-clientes',
-  standalone: false,
   templateUrl: './registro-clientes.component.html',
-  styleUrls: ['./registro-clientes.component.css']
+  styleUrls: ['./registro-clientes.component.css'],
+  standalone:false
 })
 export class RegistroClientesComponent implements OnInit {
   cliente = {
     nombre: '',
     apellidoP: '',
     apellidoM: '',
+    fecha: '',
     telefono: '',
-    correo: ''
+    nss: ''
   };
   clienteIndex: number | null = null;
 
@@ -25,7 +26,6 @@ export class RegistroClientesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Verificar si hay un parámetro 'editar' en la URL
     this.activatedRoute.queryParams.subscribe(params => {
       const index = params['editar'];
       if (index !== undefined) {
@@ -39,7 +39,7 @@ export class RegistroClientesComponent implements OnInit {
     if (this.clienteIndex !== null) {
       const clientes = this.clienteService.obtenerClientes();
       const cliente = clientes[this.clienteIndex];
-      this.cliente = { ...cliente }; // Cargar los datos del cliente en el formulario
+      this.cliente = { ...cliente };
     }
   }
 
@@ -49,6 +49,10 @@ export class RegistroClientesComponent implements OnInit {
     } else {
       this.clienteService.editarCliente(this.clienteIndex, this.cliente);
     }
+    this.router.navigate(['/clientes']);
+  }
+
+  cancelar() {
     this.router.navigate(['/tiendita/clientes']);
   }
 }

@@ -4,18 +4,19 @@ import { ProductoService } from '../producto.service';
 
 @Component({
   selector: 'app-registro-productos',
-  standalone: false,
   templateUrl: './registro-productos.component.html',
-  styleUrls: ['./registro-productos.component.css']
+  styleUrls: ['./registro-productos.component.css'],
+  standalone:false
 })
 export class RegistroProductosComponent implements OnInit {
   producto = {
     nombre: '',
     descripcion: '',
-    precio: '',
-    cantidad: ''
+    precio: 0,
+    cantidad: 1
   };
   productoIndex: number | null = null;
+  location: any;
 
   constructor(
     private productoService: ProductoService,
@@ -24,7 +25,6 @@ export class RegistroProductosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Verificar si hay un parámetro 'editar' en la URL
     this.activatedRoute.queryParams.subscribe(params => {
       const index = params['editar'];
       if (index !== undefined) {
@@ -38,7 +38,7 @@ export class RegistroProductosComponent implements OnInit {
     if (this.productoIndex !== null) {
       const productos = this.productoService.obtenerProductos();
       const producto = productos[this.productoIndex];
-      this.producto = { ...producto }; // Cargar los datos del producto en el formulario
+      this.producto = { ...producto }; // Cargar datos en el formulario
     }
   }
 
@@ -49,5 +49,8 @@ export class RegistroProductosComponent implements OnInit {
       this.productoService.editarProducto(this.productoIndex, this.producto);
     }
     this.router.navigate(['/tiendita/productos']);
+  }
+  cancelar() {
+    this.router.navigate(['/tiendita/productos']); // Redirige a la lista de productos
   }
 }

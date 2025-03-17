@@ -1,0 +1,26 @@
+<app-barra></app-barra>
+<div class="dashboard-container">
+    <div class="stats">
+      <div class="stat-card">
+        <h3>Empleados</h3>
+        <p>{{ conteos.empleados }}</p>
+      </div>
+      <div class="stat-card">
+        <h3>Productos</h3>
+        <p>{{ conteos.productos }}</p>
+      </div>
+      <div class="stat-card">
+        <h3>Usuarios</h3>
+        <p>{{ conteos.usuarios }}</p>
+      </div>
+    </div>
+  
+    <div class="chart-container">
+      <canvas baseChart 
+        [data]="chartData"
+        [options]="chartOptions"
+        chartType="bar">
+      </canvas>
+    </div>
+  </div>
+  

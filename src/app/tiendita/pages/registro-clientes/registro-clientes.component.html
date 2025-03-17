@@ -1,29 +1,84 @@
 <app-barra></app-barra>
 <div class="contenido">
     <h1>Nuevo Cliente</h1>
-    <form id="form-cliente" (submit)="agregarCliente()">
+    <form id="form-cliente" (ngSubmit)="agregarCliente()" #clienteForm="ngForm">
         <div class="form-group">
             <label for="nombre">Nombre:</label>
-            <input type="text" maxlength="25" id="nombre" name="nombre" [(ngModel)]="cliente.nombre" required>
+            <input type="text" id="nombre" name="nombre" 
+                [(ngModel)]="cliente.nombre" 
+                #nombre="ngModel"
+                pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,25}$"
+                required>
+            <div class="error" *ngIf="nombre.invalid && nombre.touched">
+                <span *ngIf="nombre.errors?.['required']">El nombre es obligatorio.</span>
+                <span *ngIf="nombre.errors?.['pattern']">Máximo 25 caracteres, solo letras y espacios.</span>
+            </div>
         </div>
+
         <div class="form-group">
             <label for="apellidoP">Apellido Paterno:</label>
-            <input type="text" maxlength="20" id="apellidoP" name="apellidoP" [(ngModel)]="cliente.apellidoP" required>
+            <input type="text" id="apellidoP" name="apellidoP" 
+                [(ngModel)]="cliente.apellidoP" 
+                #apellidoP="ngModel"
+                pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{1,20}$"
+                required>
+            <div class="error" *ngIf="apellidoP.invalid && apellidoP.touched">
+                <span *ngIf="apellidoP.errors?.['required']">El apellido paterno es obligatorio.</span>
+                <span *ngIf="apellidoP.errors?.['pattern']">Máximo 20 caracteres, solo letras y espacios.</span>
+            </div>
         </div>
+
         <div class="form-group">
             <label for="apellidoM">Apellido Materno:</label>
-            <input type="text" maxlength="20" id="apellidoM" name="apellidoM" [(ngModel)]="cliente.apellidoM" required>
+            <input type="text" id="apellidoM" name="apellidoM" 
+                [(ngModel)]="cliente.apellidoM" 
+                #apellidoM="ngModel"
+                pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{0,20}$">
+            <div class="error" *ngIf="apellidoM.invalid && apellidoM.touched">
+                <span *ngIf="apellidoM.errors?.['pattern']">Máximo 20 caracteres, solo letras y espacios.</span>
+            </div>
         </div>
+
+        <div class="form-group">
+            <label for="fecha_nac">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nac" name="fecha_nac" 
+                [(ngModel)]="cliente.fecha" 
+                #fecha_nac="ngModel"
+                required>
+            <div class="error" *ngIf="fecha_nac.invalid && fecha_nac.touched">
+                <span *ngIf="fecha_nac.errors?.['required']">La fecha de nacimiento es obligatoria.</span>
+            </div>
+        </div>
+
         <div class="form-group">
             <label for="telefono">Teléfono:</label>
-            <input type="tel" maxlength="11" id="telefono" name="telefono" [(ngModel)]="cliente.telefono" required>
+            <input type="tel" id="telefono" name="telefono" 
+                [(ngModel)]="cliente.telefono" 
+                #telefono="ngModel"
+                pattern="^[0-9]{10}$"
+                required>
+            <div class="error" *ngIf="telefono.invalid && telefono.touched">
+                <span *ngIf="telefono.errors?.['required']">El teléfono es obligatorio.</span>
+                <span *ngIf="telefono.errors?.['pattern']">Debe contener exactamente 10 dígitos.</span>
+            </div>
         </div>
+
         <div class="form-group">
-            <label for="correo">Correo:</label>
-            <input type="email" maxlength="30" id="correo" name="correo" [(ngModel)]="cliente.correo" required>
+            <label for="nss">NSS:</label>
+            <input type="text" id="nss" name="nss" 
+                [(ngModel)]="cliente.nss" 
+                #nss="ngModel"
+                pattern="^[0-9]{11}$"
+                required>
+            <div class="error" *ngIf="nss.invalid && nss.touched">
+                <span *ngIf="nss.errors?.['required']">El NSS es obligatorio.</span>
+                <span *ngIf="nss.errors?.['pattern']">Debe contener exactamente 11 dígitos.</span>
+            </div>
         </div>
+
         <div class="btn-agregar">
-            <button type="submit">Agregar</button>
+            <button type="submit" [disabled]="clienteForm.invalid">Agregar</button>
+            <button type="button" class="btn-cancelar" (click)="cancelar()">Cancelar</button>
         </div>
     </form>
 </div>

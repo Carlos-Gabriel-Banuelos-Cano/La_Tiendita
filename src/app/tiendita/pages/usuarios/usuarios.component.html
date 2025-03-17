@@ -22,10 +22,35 @@
                 <td>{{ usuario.correo }}</td>
                 <td>{{ usuario.contrasena1 }}</td>
                 <td>
-                    <a [routerLink]="['/tiendita/registro-usuarios']" [queryParams]="{ editar: i }">Editar</a>
-                    <button (click)="eliminarUsuario(i)">Eliminar</button>
+                    <button class="editar" 
+                    (click)="editarUsuario(i)" 
+                    [disabled]="editando">Editar</button>
+                                        <button class="eliminar" (click)="confirmarEliminacion(i)">Eliminar</button>
                 </td>
             </tr>
         </tbody>
     </table>
+
+    <!-- Formulario de edición -->
+    <div *ngIf="editIndex !== null" class="form-edicion">
+        <h2>Editar Usuario</h2>
+        <form (ngSubmit)="guardarEdicion()">
+            <div class="form-group">
+                <label>Nombre de Usuario:</label>
+                <input type="text" [(ngModel)]="usuarioEditando.nombreUsuario" name="nombreUsuario" required>
+            </div>
+            <div class="form-group">
+                <label>Correo:</label>
+                <input type="email" [(ngModel)]="usuarioEditando.correo" name="correo" required>
+            </div>
+            <div class="form-group">
+                <label>Contraseña:</label>
+                <input type="password" [(ngModel)]="usuarioEditando.contrasena1" name="contrasena1" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-guardar">Guardar Cambios</button>
+                <button type="button" class="btn-cancelar" (click)="cancelarEdicion()">Cancelar</button>
+            </div>
+        </form>
+    </div>
 </div>

@@ -1,86 +1,216 @@
 .contenido {
     padding: 20px;
     margin-left: 250px; /* Ajusta este valor según el ancho de tu barra */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 app-barra {
     position: fixed;
-    width: 250px; /* Ajusta según el tamaño real de la barra */
+    width: 200px; /* Ajusta según el tamaño real de la barra */
     height: 100%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+p {
+    color: #7f8c8d;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn-agregar button {
+    background-color: #3498db; 
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-agregar button:hover {
+    background-color: #2980b9;
+}
+
+.fa {
+    font-size: 18px;
 }
 
 table {
     width: 100%;
+    max-width: 900px;
     margin-top: 20px;
     border-collapse: collapse;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    color: black;
     overflow: hidden;
 }
 
-
 thead {
-    background-color: #ff69b4; 
+    background-color: #34495e;
     color: white;
 }
 
-
-th {
+th, td {
     text-align: center;
-    padding: 12px;
-    font-weight: bold;
+    padding: 14px;
 }
-
 
 td {
-    text-align: center;
-    padding: 12px;
     background-color: #ffffff;
+    border-bottom: 1px solid #ecf0f1;
 }
-
 
 tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; 
+    background-color: #f9f9f9;
 }
 
-
-
-.btn-agregar button {
-    background-color: rgb(116, 101, 182); 
-    color: white;
+td a, td button {
+    padding: 6px 12px;
     border: none;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
     border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+    font-size: 14px;
 }
 
-
-.btn-agregar button:hover {
-    background-color: rgb(137, 127, 182); 
-}
-
-
-
-
-
-.fa {
+td a {
+    background-color: #27ae60;
+    color: white;
     margin-right: 5px;
 }
 
+.editar {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.editar:hover {
+    background-color: #229954;
+}
+
+.eliminar {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.eliminar:hover {
+    background-color: #c0392b;
+}
 
 @media (max-width: 768px) {
     .contenido {
-        padding: 10px;
+        margin-left: 0;
+        padding: 15px;
+        align-items: stretch;
     }
-
     table, th, td {
         font-size: 14px;
     }
-
     .btn-agregar button {
-        padding: 8px 15px;
+        padding: 10px;
+        font-size: 14px;
     }
+    td a, td button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
+
+.form-edicion {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-edicion h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #34495e;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+button {
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-guardar {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+}
+
+.btn-guardar:hover {
+    background-color: #229954;
+}
+
+.btn-cancelar {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+}
+
+.btn-cancelar:hover {
+    background-color: #c0392b;
 }

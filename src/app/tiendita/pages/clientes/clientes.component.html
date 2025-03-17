@@ -1,12 +1,14 @@
 <app-barra></app-barra>
+
 <div class="contenido">
-    <h1>Clientes</h1>
-    <p>Gestión de clientes</p>
+    <h1>Empleados</h1>
+    <p>Gestión de Empleados</p>
     <div class="btn-agregar">
         <a href="/tiendita/registro-clientes">
-            <button><i class="fa fa-plus"></i> Agregar Cliente</button>
+            <button><i class="fa fa-plus"></i> Agregar Empleados</button>
         </a>
     </div>
+    
     <table>
         <thead>
             <tr>
@@ -14,7 +16,8 @@
                 <th>Apellido Paterno</th>
                 <th>Apellido Materno</th>
                 <th>Teléfono</th>
-                <th>Correo</th>
+                <th>Fecha de Nacimiento</th>
+                <th>NSS</th>
                 <th>Operaciones</th>
             </tr>
         </thead>
@@ -24,12 +27,48 @@
                 <td>{{ cliente.apellidoP }}</td>
                 <td>{{ cliente.apellidoM }}</td>
                 <td>{{ cliente.telefono }}</td>
-                <td>{{ cliente.correo }}</td>
+                <td>{{ cliente.fecha }}</td>
+                <td>{{ cliente.nss }}</td>
                 <td>
-                    <button (click)="editarCliente(i)">Editar</button>
-                    <button (click)="eliminarCliente(i)">Eliminar</button>
+                    <button class="editar" (click)="editarCliente(i)" [disabled]="editando">Editar</button>
+                    <button class="eliminar" (click)="confirmarEliminacion(i)">Eliminar</button>
                 </td>
             </tr>
         </tbody>
     </table>
+
+    <!-- Formulario de edición -->
+    <div *ngIf="editIndex !== null" class="form-edicion">
+        <h2>Editar Cliente</h2>
+        <form (ngSubmit)="guardarEdicion()">
+            <div class="form-group">
+                <label>Nombre:</label>
+                <input type="text" [(ngModel)]="clienteEditando.nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label>Apellido Paterno:</label>
+                <input type="text" [(ngModel)]="clienteEditando.apellidoP" name="apellidoP" required>
+            </div>
+            <div class="form-group">
+                <label>Apellido Materno:</label>
+                <input type="text" [(ngModel)]="clienteEditando.apellidoM" name="apellidoM" required>
+            </div>
+            <div class="form-group">
+                <label>Teléfono:</label>
+                <input type="tel" [(ngModel)]="clienteEditando.telefono" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label>Fecha de Nacimiento:</label>
+                <input type="date" [(ngModel)]="clienteEditando.fecha" name="fecha" required>
+            </div>
+            <div class="form-group">
+                <label>NSS:</label>
+                <input type="text" [(ngModel)]="clienteEditando.nss" name="nss" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-guardar">Guardar Cambios</button>
+                <button type="button" class="btn-cancelar" (click)="cancelarEdicion()">Cancelar</button>
+            </div>
+        </form>
+    </div>
 </div>

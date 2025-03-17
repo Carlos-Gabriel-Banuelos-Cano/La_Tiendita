@@ -14,29 +14,65 @@ form {
     padding-right: 50px;
 }
 
+.error {
+    color: crimson;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
 .form-group {
     margin-bottom: 15px;
 }
+
 .form-group label {
     display: block;
     margin-bottom: 5px;
 }
+
 .form-group input {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
+
+.form-group input.ng-invalid.ng-touched {
+    border-color: crimson;
+    background-color: #ffe6e6;
+}
+
 .btn-agregar {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
+
 .btn-agregar button {
     padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
     border: none;
-    background-color: rgb(116, 101, 182);
+    border-radius: 5px;
     color: white;
     transition: background-color 0.3s;
 }
-.btn-agregar button:hover {
+
+/* Estilo para el botón "Agregar" */
+.btn-agregar button:first-child {
+    background-color: rgb(116, 101, 182);
+}
+
+.btn-agregar button:first-child:hover {
     background-color: rgb(95, 83, 151);
+}
+
+/* Estilo para el botón "Cancelar" */
+.btn-cancelar {
+    background-color: #dc3545;
+}
+
+.btn-cancelar:hover {
+    background-color: #a71d2a;
 }

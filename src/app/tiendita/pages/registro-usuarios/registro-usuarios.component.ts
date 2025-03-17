@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from '../usuario.service';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-registro-usuarios',
@@ -31,7 +33,7 @@ export class RegistroUsuariosComponent implements OnInit {
           if (usuario) {
             this.nombreUsuario = usuario.nombreUsuario;
             this.correo1 = usuario.correo;
-            this.contrasena1 = usuario.contrasena;
+            this.contrasena1 = usuario.contrasena1;
           }
         }
       }
@@ -39,19 +41,32 @@ export class RegistroUsuariosComponent implements OnInit {
   }
   
 
-  agregarOEditarUsuario() {
+  agregarOEditarUsuario(form: NgForm) {
+    if (form.invalid) { // Si el formulario es inválido, no se procesa
+        alert("Por favor, complete los campos correctamente.");
+        return;
+    }
+
+    // Validación extra para prevenir datos vacíos o incorrectos
+    if (!this.nombreUsuario || !this.correo1 || !this.contrasena1) {
+        alert("No se permiten campos vacíos.");
+        return;
+    }
+
+    // Creando el objeto de usuario
     const nuevoUsuario = {
-      nombreUsuario: this.nombreUsuario,
-      correo: this.correo1,
-      contrasena: this.contrasena1
+        nombreUsuario: this.nombreUsuario.trim(),
+        correo: this.correo1.trim(),
+        contrasena1: this.contrasena1.trim()
     };
 
     if (this.usuarioIndex !== null) {
-      this.usuarioService.actualizarUsuario(this.usuarioIndex, nuevoUsuario);
+        this.usuarioService.actualizarUsuario(this.usuarioIndex, nuevoUsuario);
     } else {
-      this.usuarioService.guardarUsuario(nuevoUsuario);
+        this.usuarioService.guardarUsuario(nuevoUsuario);
     }
 
     this.router.navigate(['/tiendita/usuarios']);
-  }
+}
+
 }
